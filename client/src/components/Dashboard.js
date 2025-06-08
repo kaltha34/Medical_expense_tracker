@@ -103,11 +103,9 @@ function Dashboard({ user }) {
   return (
     <div className="dashboard">
       <div className="dashboard-header">
-        <div>
-          <h2>Dashboard</h2>
-          <p>Welcome back, {user?.name || 'User'}!</p>
-        </div>
-        <div className="dashboard-actions">
+        <h2><i className="fas fa-tachometer-alt"></i> Dashboard</h2>
+        <div className="date-display">
+          <i className="far fa-calendar-alt"></i> {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
           <button onClick={handleQuickAdd} className="btn-primary">
             <i className="fas fa-plus-circle"></i> Quick Add Expense
           </button>
@@ -115,40 +113,48 @@ function Dashboard({ user }) {
       </div>
       
       <div className="dashboard-summary">
-        <div className="summary-card">
+        <div className="summary-card total-expenses">
           <div className="summary-card-icon">
             <i className="fas fa-wallet"></i>
           </div>
-          <h3>Total Expenses</h3>
-          <div className="amount">${summaryData.totalExpenses.toFixed(2)}</div>
-          <p>All time</p>
+          <div className="card-content">
+            <h3>Total Expenses</h3>
+            <div className="amount">${summaryData.totalExpenses.toFixed(2)}</div>
+            <p>All time</p>
+          </div>
         </div>
         
-        <div className="summary-card">
+        <div className="summary-card this-month">
           <div className="summary-card-icon">
             <i className="fas fa-calendar-alt"></i>
           </div>
-          <h3>This Month</h3>
-          <div className="amount">${summaryData.thisMonth.toFixed(2)}</div>
-          <p>{new Date().toLocaleString('default', { month: 'long' })}</p>
-        </div>
-        
-        <div className="summary-card">
-          <div className="summary-card-icon">
-            <i className="fas fa-file-medical"></i>
+          <div className="card-content">
+            <h3>This Month</h3>
+            <div className="amount">${summaryData.thisMonth.toFixed(2)}</div>
+            <p>{new Date().toLocaleString('default', { month: 'long' })}</p>
           </div>
-          <h3>Pending Claims</h3>
-          <div className="amount">${summaryData.pendingClaims.toFixed(2)}</div>
-          <p>Awaiting reimbursement</p>
         </div>
         
-        <div className="summary-card">
+        <div className="summary-card pending-claims">
+          <div className="summary-card-icon">
+            <i className="fas fa-hourglass-half"></i>
+          </div>
+          <div className="card-content">
+            <h3>Pending Claims</h3>
+            <div className="amount">${summaryData.pendingClaims.toFixed(2)}</div>
+            <p>Awaiting reimbursement</p>
+          </div>
+        </div>
+        
+        <div className="summary-card tax-deductible">
           <div className="summary-card-icon">
             <i className="fas fa-file-invoice-dollar"></i>
           </div>
-          <h3>Tax Deductible</h3>
-          <div className="amount">${summaryData.taxDeductible.toFixed(2)}</div>
-          <p>Potential tax savings</p>
+          <div className="card-content">
+            <h3>Tax Deductible</h3>
+            <div className="amount">${summaryData.taxDeductible.toFixed(2)}</div>
+            <p>Potential tax savings</p>
+          </div>
         </div>
       </div>
       
