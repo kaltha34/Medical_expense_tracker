@@ -2,6 +2,12 @@
 
 MediTrack is a comprehensive web application designed to help individuals and families track their medical expenses, manage insurance claims, and prepare for tax deductions. With an intuitive interface and practical features, MediTrack simplifies the often complex process of managing healthcare costs.
 
+## Latest Updates
+
+- **Sri Lankan Rupee (LKR) Support**: The application now fully supports Sri Lankan Rupee (LKR) for all financial transactions and displays
+- **Modern UI Improvements**: Enhanced user interface with consistent styling and proper indentation
+- **Localized Tax Information**: Updated tax deduction information specific to Sri Lanka
+
 ## Features
 
 ### MVP Features
