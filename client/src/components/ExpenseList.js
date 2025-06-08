@@ -264,7 +264,7 @@ function ExpenseList({ user }) {
       <div className="card">
         <div className="list-summary">
           <p><strong>Showing {filteredExpenses.length} expenses</strong></p>
-          <p><strong>Total: ${getTotalAmount()}</strong></p>
+          <p><strong>Total: LKR {getTotalAmount()}</strong></p>
         </div>
 
         {filteredExpenses.length === 0 ? (
@@ -292,7 +292,7 @@ function ExpenseList({ user }) {
                   <td>{expense.provider}</td>
                   <td>{expense.description}</td>
                   <td>{expense.category}</td>
-                  <td>${expense.amount.toFixed(2)}</td>
+                  <td>LKR {expense.amount.toFixed(2)}</td>
                   <td>
                     <span className={
                       expense.status === 'Reimbursed' ? 'status-success' :
