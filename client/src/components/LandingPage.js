@@ -23,27 +23,35 @@ function LandingPage() {
         <h2>Why Choose MediTrack?</h2>
         <div className="features-grid">
           <div className="feature-card">
-            <div className="feature-icon">📋</div>
+            <div className="feature-icon">
+              <i className="fas fa-file-invoice-dollar"></i>
+            </div>
             <h3>Expense Tracking</h3>
-            <p>Easily record and organize all your medical expenses in one secure place.</p>
+            <p>Easily record and organize all your medical expenses in one secure place with customizable categories.</p>
           </div>
           
           <div className="feature-card">
-            <div className="feature-icon">📱</div>
+            <div className="feature-icon">
+              <i className="fas fa-receipt"></i>
+            </div>
             <h3>Receipt Management</h3>
-            <p>Upload and store receipts digitally for easy access and organization.</p>
+            <p>Upload and store receipts digitally with OCR technology to automatically extract key information.</p>
           </div>
           
           <div className="feature-card">
-            <div className="feature-icon">🏥</div>
+            <div className="feature-icon">
+              <i className="fas fa-hospital-user"></i>
+            </div>
             <h3>Insurance Claims</h3>
-            <p>Track the status of your insurance claims and manage reimbursements.</p>
+            <p>Track the status of your insurance claims, set reminders for follow-ups, and manage reimbursements.</p>
           </div>
           
           <div className="feature-card">
-            <div className="feature-icon">💰</div>
+            <div className="feature-icon">
+              <i className="fas fa-chart-pie"></i>
+            </div>
             <h3>Tax Preparation</h3>
-            <p>Generate reports for tax-deductible medical expenses to maximize your returns.</p>
+            <p>Generate comprehensive reports for tax-deductible medical expenses with year-over-year analysis.</p>
           </div>
         </div>
       </div>
