@@ -45,26 +45,80 @@ function App() {
     <Router>
       <div className="app">
         <header className="app-header">
-          <div className="container">
-            <h1>MediTrack</h1>
-            <p>Your Medical Expense Tracker</p>
+          <div className="header-container">
+            <div className="brand">
+              <Link to={isAuthenticated ? "/" : "/"}>
+                <span className="brand-logo">
+                  <i className="fas fa-heartbeat"></i>
+                </span>
+                <span className="brand-name">MediTrack</span>
+              </Link>
+            </div>
+            
             {isAuthenticated ? (
-              <nav className="main-nav">
-                <ul>
-                  <li><Link to="/"><i className="fas fa-home"></i> Dashboard</Link></li>
-                  <li><Link to="/expenses"><i className="fas fa-list"></i> Expenses</Link></li>
-                  <li><Link to="/add-expense"><i className="fas fa-plus-circle"></i> Add Expense</Link></li>
-                  <li><Link to="/analytics"><i className="fas fa-chart-pie"></i> Analytics</Link></li>
-                  <li><Link to="/reports"><i className="fas fa-file-alt"></i> Reports</Link></li>
-                  <li><Link to="/tax-documents"><i className="fas fa-file-invoice-dollar"></i> Tax Documents</Link></li>
-                  <li><Link to="/insurance-claims"><i className="fas fa-file-medical"></i> Insurance Claims</Link></li>
-                  <li><button onClick={handleLogout} className="btn-logout"><i className="fas fa-sign-out-alt"></i> Logout</button></li>
-                </ul>
-              </nav>
+              <>
+                <nav className="main-nav">
+                  <Link to="/" className="nav-item" title="Dashboard">
+                    <i className="fas fa-home"></i>
+                    <span>Dashboard</span>
+                  </Link>
+                  <Link to="/expenses" className="nav-item" title="Expenses">
+                    <i className="fas fa-list"></i>
+                    <span>Expenses</span>
+                  </Link>
+                  <Link to="/add-expense" className="nav-item" title="Add Expense">
+                    <i className="fas fa-plus-circle"></i>
+                    <span>Add</span>
+                  </Link>
+                  <Link to="/analytics" className="nav-item" title="Analytics">
+                    <i className="fas fa-chart-pie"></i>
+                    <span>Analytics</span>
+                  </Link>
+                  <Link to="/reports" className="nav-item" title="Reports">
+                    <i className="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                  </Link>
+                </nav>
+                
+                <div className="nav-actions">
+                  <div className="dropdown">
+                    <button className="dropdown-toggle">
+                      <i className="fas fa-ellipsis-h"></i>
+                    </button>
+                    <div className="dropdown-menu">
+                      <Link to="/tax-documents" className="dropdown-item">
+                        <i className="fas fa-file-invoice-dollar"></i>
+                        <span>Tax Documents</span>
+                      </Link>
+                      <Link to="/insurance-claims" className="dropdown-item">
+                        <i className="fas fa-file-medical"></i>
+                        <span>Insurance Claims</span>
+                      </Link>
+                      <div className="dropdown-divider"></div>
+                      <button onClick={handleLogout} className="dropdown-item">
+                        <i className="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div className="user-profile">
+                    <div className="avatar">
+                      <i className="fas fa-user"></i>
+                    </div>
+                  </div>
+                </div>
+              </>
             ) : (
               <div className="auth-nav">
-                <Link to="/login" className="btn-primary">Login</Link>
-                <Link to="/register" className="btn-secondary">Register</Link>
+                <Link to="/login" className="btn-login">
+                  <i className="fas fa-sign-in-alt"></i>
+                  <span>Login</span>
+                </Link>
+                <Link to="/register" className="btn-register">
+                  <i className="fas fa-user-plus"></i>
+                  <span>Register</span>
+                </Link>
               </div>
             )}
           </div>
