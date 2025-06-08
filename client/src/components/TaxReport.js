@@ -102,7 +102,7 @@ function TaxReport({ user }) {
       <div className="dashboard-summary">
         <div className="summary-card">
           <h3>Total Tax Deductible</h3>
-          <div className="amount">${stats.totalDeductible.toFixed(2)}</div>
+          <div className="amount">LKR {stats.totalDeductible.toFixed(2)}</div>
           <p>For {year} tax year</p>
         </div>
       </div>
@@ -127,12 +127,12 @@ function TaxReport({ user }) {
                 {Object.entries(stats.byCategory).map(([category, amount]) => (
                   <tr key={category}>
                     <td>{category}</td>
-                    <td>${amount.toFixed(2)}</td>
+                    <td>LKR {amount.toFixed(2)}</td>
                   </tr>
                 ))}
                 <tr className="total-row">
                   <td><strong>Total</strong></td>
-                  <td><strong>${stats.totalDeductible.toFixed(2)}</strong></td>
+                  <td><strong>LKR {stats.totalDeductible.toFixed(2)}</strong></td>
                 </tr>
               </tbody>
             </table>
@@ -165,7 +165,7 @@ function TaxReport({ user }) {
                   <td>{expense.provider}</td>
                   <td>{expense.description}</td>
                   <td>{expense.category}</td>
-                  <td>${expense.amount.toFixed(2)}</td>
+                  <td>LKR {expense.amount.toFixed(2)}</td>
                 </tr>
               ))}
             </tbody>
@@ -182,7 +182,7 @@ function TaxReport({ user }) {
         <div className="tax-tips">
           <h4>Medical Expense Tax Deduction Tips</h4>
           <ul>
-            <li>In the United States, you can deduct medical expenses that exceed 7.5% of your adjusted gross income (AGI).</li>
+            <li>In Sri Lanka, you can deduct medical expenses according to the local tax regulations.</li>
             <li>Keep all receipts and documentation for medical expenses.</li>
             <li>Eligible expenses include payments for diagnosis, treatment, prevention, and prescription medications.</li>
             <li>Some insurance premiums may be tax-deductible.</li>
