@@ -810,11 +810,244 @@ main {
 }
 
 /* Analytics Styles */
-.expense-analytics,
-.report-generator,
-.tax-document-generator {
-  max-width: 1000px;
-  margin: 0 auto;
+.expense-analytics {
+  padding: 20px;
+  background-color: #f8f9fc;
+  min-height: 100vh;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.analytics-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.analytics-header h2 i {
+  color: #6c5ce7;
+}
+
+.analytics-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-export, .btn-refresh {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-export {
+  background-color: #6c5ce7;
+  color: white;
+}
+
+.btn-refresh {
+  background-color: #f5f6fa;
+  color: #333;
+  border: 1px solid #e1e4e8;
+}
+
+.btn-export:hover {
+  background-color: #5649c0;
+}
+
+.btn-refresh:hover {
+  background-color: #e9ecef;
+}
+
+.analytics-controls {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.control-group:last-child {
+  margin-bottom: 0;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.chart-type-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.chart-type-btn {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 1px solid #e1e4e8;
+  background-color: white;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chart-type-btn.active {
+  background-color: #6c5ce7;
+  color: white;
+  border-color: #6c5ce7;
+}
+
+.chart-type-btn:hover:not(.active) {
+  background-color: #f5f6fa;
+}
+
+.analytics-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.analytics-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid transparent;
+}
+
+.analytics-card.total {
+  border-left-color: #6c5ce7;
+}
+
+.analytics-card.tax {
+  border-left-color: #00b894;
+}
+
+.analytics-card.insurance {
+  border-left-color: #fdcb6e;
+}
+
+.analytics-card.pocket {
+  border-left-color: #e84393;
+}
+
+.analytics-card .card-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.analytics-card.total .card-icon {
+  background-color: rgba(108, 92, 231, 0.1);
+  color: #6c5ce7;
+}
+
+.analytics-card.tax .card-icon {
+  background-color: rgba(0, 184, 148, 0.1);
+  color: #00b894;
+}
+
+.analytics-card.insurance .card-icon {
+  background-color: rgba(253, 203, 110, 0.1);
+  color: #fdcb6e;
+}
+
+.analytics-card.pocket .card-icon {
+  background-color: rgba(232, 67, 147, 0.1);
+  color: #e84393;
+}
+
+.analytics-card .card-content {
+  padding-right: 50px;
+}
+
+.analytics-card h3 {
+  margin: 0 0 15px;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.analytics-card .amount {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.analytics-card .card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.analytics-card .progress-bar {
+  height: 6px;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.analytics-card .progress {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.analytics-card.total .progress {
+  background-color: #6c5ce7;
+}
+
+.analytics-card.tax .progress {
+  background-color: #00b894;
+}
+
+.analytics-card.insurance .progress {
+  background-color: #fdcb6e;
+}
+
+.analytics-card.pocket .progress {
+  background-color: #e84393;
+}
+
+.analytics-card span {
+  font-size: 0.85rem;
+  color: #888;
 }
 
 .analytics-filters,
