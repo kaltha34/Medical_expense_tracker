@@ -62,7 +62,27 @@ function LandingPage() {
             </div>
           </div>
           <div className="hero-image">
-            <img src="/images/dashboard-preview.png" alt="MediTrack Dashboard" className="dashboard-preview" />
+            <div className="dashboard-preview-container">
+              <div className="dashboard-preview-mockup">
+                <div className="mockup-header">
+                  <div className="mockup-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div className="mockup-title">MediTrack Dashboard</div>
+                </div>
+                <div className="mockup-content">
+                  <div className="mockup-card"></div>
+                  <div className="mockup-card"></div>
+                  <div className="mockup-stats">
+                    <div className="mockup-stat-bar"></div>
+                    <div className="mockup-stat-bar"></div>
+                    <div className="mockup-stat-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="floating-element receipt-icon">
               <i className="fas fa-receipt"></i>
             </div>
@@ -213,7 +233,7 @@ function LandingPage() {
             <div className="pricing-badge">Popular</div>
             <div className="pricing-header">
               <h3>Free</h3>
-              <div className="price">$0</div>
+              <div className="price">LKR 0</div>
               <p>Forever</p>
             </div>
             <div className="pricing-features">
@@ -236,7 +256,7 @@ function LandingPage() {
             <div className="pricing-badge">Premium</div>
             <div className="pricing-header">
               <h3>Premium</h3>
-              <div className="price">$9.99</div>
+              <div className="price">LKR 1,999</div>
               <p>per month</p>
             </div>
             <div className="pricing-features">
@@ -275,7 +295,7 @@ function LandingPage() {
                 <span className="stat-label">Active Users</span>
               </div>
               <div className="cta-stat">
-                <span className="stat-value">$2.5M+</span>
+                <span className="stat-value">LKR 500M+</span>
                 <span className="stat-label">Tax Savings</span>
               </div>
               <div className="cta-stat">
@@ -297,7 +317,7 @@ function LandingPage() {
             
             <div className="cta-testimonial">
               <div className="testimonial-avatar">
-                <img src="/images/avatar.jpg" alt="User" />
+                <div className="avatar-placeholder"><i className="fas fa-user-circle"></i></div>
               </div>
               <div className="testimonial-content">
                 <p>"MediTrack has saved me hours of time and hundreds of dollars in tax deductions I would have missed."</p>
