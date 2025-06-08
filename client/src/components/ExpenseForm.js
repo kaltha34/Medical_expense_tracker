@@ -133,7 +133,7 @@ function ExpenseForm({ user }) {
           </div>
           
           <div className="form-group">
-            <label htmlFor="amount" className="form-label">Amount ($)*</label>
+            <label htmlFor="amount" className="form-label">Amount (LKR)*</label>
             <input
               type="number"
               id="amount"
