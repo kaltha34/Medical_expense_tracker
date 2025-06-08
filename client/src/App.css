@@ -536,9 +536,18 @@ main {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   padding: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 160px;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
+  cursor: pointer;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -555,7 +564,39 @@ main {
 
 .summary-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card.total-expenses {
+  border-left-color: #6c5ce7;
+}
+
+.summary-card.this-month {
+  border-left-color: #00cec9;
+}
+
+.summary-card.pending-claims {
+  border-left-color: #fdcb6e;
+}
+
+.summary-card.tax-deductible {
+  border-left-color: #00b894;
+}
+
+.summary-card.total-expenses .summary-card-icon {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+}
+
+.summary-card.this-month .summary-card-icon {
+  background: linear-gradient(135deg, #00cec9, #81ecec);
+}
+
+.summary-card.pending-claims .summary-card-icon {
+  background: linear-gradient(135deg, #fdcb6e, #ffeaa7);
+}
+
+.summary-card.tax-deductible .summary-card-icon {
+  background: linear-gradient(135deg, #00b894, #55efc4);
 }
 
 .summary-card h3 {
