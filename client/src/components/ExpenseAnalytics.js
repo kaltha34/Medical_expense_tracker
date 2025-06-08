@@ -124,7 +124,17 @@ function ExpenseAnalytics({ user }) {
   
   return (
     <div className="expense-analytics">
-      <h2>Expense Analytics</h2>
+      <div className="analytics-header">
+        <h2><i className="fas fa-chart-pie"></i> Expense Analytics</h2>
+        <div className="analytics-actions">
+          <button className="btn-export">
+            <i className="fas fa-file-export"></i> Export Data
+          </button>
+          <button className="btn-refresh" onClick={loadExpenses}>
+            <i className="fas fa-sync-alt"></i> Refresh
+          </button>
+        </div>
+      </div>
       
       <div className="analytics-controls">
         <div className="control-group">
@@ -313,45 +323,6 @@ function ExpenseAnalytics({ user }) {
             
             <div className="analytics-cards">
               <div className="analytics-card">
-                <div className="analytics-card-header">
-                  <h4>Total Expenses</h4>
-                </div>
-                <div className="analytics-card-body">
-                  <div className="analytics-value">${totalExpenses.toFixed(2)}</div>
-                  <div className="analytics-label">
-                    {filteredExpenses.length} expense{filteredExpenses.length !== 1 ? 's' : ''}
-                  </div>
-                </div>
-              </div>
-              
-              <div className="analytics-card">
-                <div className="analytics-card-header">
-                  <h4>Tax Deductible</h4>
-                </div>
-                <div className="analytics-card-body">
-                  <div className="analytics-value">${taxDeductibleAmount.toFixed(2)}</div>
-                  <div className="analytics-label">
-                    {((taxDeductibleAmount / totalExpenses) * 100).toFixed(1)}% of total
-                  </div>
-                </div>
-              </div>
-              
-              <div className="analytics-card">
-                <div className="analytics-card-header">
-                  <h4>Insurance Claims</h4>
-                </div>
-                <div className="analytics-card-body">
-                  <div className="analytics-value">${insuranceClaimAmount.toFixed(2)}</div>
-                  <div className="analytics-label">
-                    {((insuranceClaimAmount / totalExpenses) * 100).toFixed(1)}% of total
-                  </div>
-                </div>
-              </div>
-              
-              <div className="analytics-card">
-                <div className="analytics-card-header">
-                  <h4>Out of Pocket</h4>
-                </div>
                 <div className="analytics-card-body">
                   <div className="analytics-value">${outOfPocketAmount.toFixed(2)}</div>
                   <div className="analytics-label">
