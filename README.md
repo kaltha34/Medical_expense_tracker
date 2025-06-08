@@ -1,6 +1,6 @@
 # MediTrack - Medical Expense Tracker
 
-MediTrack is a web application that helps users track their medical expenses, manage insurance claims, and prepare for tax deductions.
+MediTrack is a comprehensive web application designed to help individuals and families track their medical expenses, manage insurance claims, and prepare for tax deductions. With an intuitive interface and practical features, MediTrack simplifies the often complex process of managing healthcare costs.
 
 ## Features
 
@@ -43,13 +43,38 @@ MediTrack is a web application that helps users track their medical expenses, ma
 
 1. Clone the repository
 ```
-git clone <repository-url>
+git clone https://github.com/kaltha34/Medical_Expense_Tracker.git
+cd Medical_Expense_Tracker
 ```
 
-2. Install dependencies for the client
+2. Install dependencies for both client and server
 ```
-cd medical-expense-tracker/client
+# Install server dependencies
 npm install
+
+# Install client dependencies
+cd client
+npm install
+cd ..
+```
+
+3. Start the development servers
+```
+# Start both client and server with concurrently
+npm start
+
+# Or start them separately
+# Terminal 1 - Start the backend server
+node server/server.js
+
+# Terminal 2 - Start the React frontend
+cd client
+npm start
+```
+
+4. Access the application
+```
+The application will be available at http://localhost:3000
 ```
 
 3. Install dependencies for the server
