@@ -2,10 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 function ExpenseAnalytics({ user }) {
   const [expenses, setExpenses] = useState([]);
-  const [timeframe, setTimeframe] = useState('year'); // year, quarter, month
+  const [timeframe, setTimeframe] = useState('year'); // year, quarter, month, custom
   const [year, setYear] = useState(new Date().getFullYear());
   const [quarter, setQuarter] = useState(Math.floor(new Date().getMonth() / 3) + 1);
   const [month, setMonth] = useState(new Date().getMonth() + 1);
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [chartType, setChartType] = useState('bar'); // bar, pie, line
+  const [showTaxDeductible, setShowTaxDeductible] = useState(true);
+  const [showInsuranceClaims, setShowInsuranceClaims] = useState(true);
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
@@ -44,6 +49,10 @@ function ExpenseAnalytics({ user }) {
       return expenseYear === year && expenseQuarter === quarter;
     } else if (timeframe === 'month') {
       return expenseYear === year && expenseMonth === month;
+    } else if (timeframe === 'custom' && startDate && endDate) {
+      const start = new Date(startDate);
+      const end = new Date(endDate);
+      return expenseDate >= start && expenseDate <= end;
     }
     return true;
   });
