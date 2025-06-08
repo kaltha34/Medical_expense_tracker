@@ -117,7 +117,7 @@ function ExpenseDetails({ user }) {
             
             <div className="expense-info-item">
               <label>Amount</label>
-              <p>${expense.amount.toFixed(2)}</p>
+              <p>LKR {expense.amount.toFixed(2)}</p>
             </div>
             
             <div className="expense-info-item">
