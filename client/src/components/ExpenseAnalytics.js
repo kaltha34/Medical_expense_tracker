@@ -150,6 +150,57 @@ function ExpenseAnalytics({ user }) {
             </button>
           </div>
         </div>
+        
+        <div className="control-group">
+          <label>Time Period:</label>
+          <div className="timeframe-selector">
+            <select 
+              value={timeframe} 
+              onChange={(e) => setTimeframe(e.target.value)}
+              className="form-select"
+            >
+              <option value="year">Year</option>
+              <option value="quarter">Quarter</option>
+              <option value="month">Month</option>
+              <option value="custom">Custom Range</option>
+            </select>
+            
+            {timeframe === 'year' && (
+              <select 
+                value={year} 
+                onChange={(e) => setYear(parseInt(e.target.value))}
+                className="form-select"
+              >
+                {Array.from({ length: 5 }, (_, i) => new Date().getFullYear() - i).map(y => (
+                  <option key={y} value={y}>{y}</option>
+                ))}
+              </select>
+            )}
+            
+            {timeframe === 'custom' && (
+              <div className="date-range-inputs">
+                <div className="date-input-group">
+                  <label>From:</label>
+                  <input 
+                    type="date" 
+                    value={startDate} 
+                    onChange={(e) => setStartDate(e.target.value)} 
+                    className="form-input"
+                  />
+                </div>
+                <div className="date-input-group">
+                  <label>To:</label>
+                  <input 
+                    type="date" 
+                    value={endDate} 
+                    onChange={(e) => setEndDate(e.target.value)} 
+                    className="form-input"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
       <p>Analyze your medical expenses to better understand your spending patterns.</p>
       
