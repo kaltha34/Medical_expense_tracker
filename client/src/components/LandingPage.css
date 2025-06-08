@@ -58,7 +58,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/pattern.svg');
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
   opacity: 0.05;
   z-index: 0;
 }
@@ -142,13 +142,74 @@
   align-items: center;
 }
 
-.dashboard-preview {
+.dashboard-preview-container {
   max-width: 100%;
   height: auto;
+  perspective: 1000px;
+}
+
+.dashboard-preview-mockup {
+  width: 450px;
+  height: 300px;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  transform: perspective(1000px) rotateY(-10deg);
+  transform: rotateY(-10deg);
   transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.mockup-header {
+  background: linear-gradient(90deg, #4361ee, #3a86ff);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.mockup-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.mockup-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.mockup-title {
+  color: white;
+  margin-left: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.mockup-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mockup-card {
+  height: 80px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #4361ee;
+}
+
+.mockup-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mockup-stat-bar {
+  height: 15px;
+  background: linear-gradient(90deg, #4361ee 70%, #e9ecef 30%);
+  border-radius: 20px;
 }
 
 .floating-element {
@@ -195,6 +256,26 @@
 .features-section {
   padding: 100px 0;
   background-color: #fff;
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e7ff;
+  color: #4361ee;
+  font-size: 2rem;
 }
 
 .section-header {
@@ -469,14 +550,110 @@
 .cta-section {
   background: linear-gradient(135deg, #3a86ff 0%, #8338ec 100%);
   color: white;
-  padding: 80px 0;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
 
 .cta-section h2 {
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  font-size: 2.2rem;
+  font-weight: 700;
 }
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+}
+
+.cta-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.cta-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.btn-large {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-testimonial {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-content p {
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.testimonial-author {
+  font-weight: 500;
+  text-align: left;
+  opacity: 0.8;
+}
+
+/* Removed duplicate style */
 
 .cta-section p {
   margin-bottom: 30px;
