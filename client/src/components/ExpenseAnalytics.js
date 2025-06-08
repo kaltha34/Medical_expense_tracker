@@ -125,6 +125,32 @@ function ExpenseAnalytics({ user }) {
   return (
     <div className="expense-analytics">
       <h2>Expense Analytics</h2>
+      
+      <div className="analytics-controls">
+        <div className="control-group">
+          <label>Chart Type:</label>
+          <div className="chart-type-selector">
+            <button 
+              className={`chart-type-btn ${chartType === 'bar' ? 'active' : ''}`}
+              onClick={() => setChartType('bar')}
+            >
+              <i className="fas fa-chart-bar"></i> Bar
+            </button>
+            <button 
+              className={`chart-type-btn ${chartType === 'pie' ? 'active' : ''}`}
+              onClick={() => setChartType('pie')}
+            >
+              <i className="fas fa-chart-pie"></i> Pie
+            </button>
+            <button 
+              className={`chart-type-btn ${chartType === 'line' ? 'active' : ''}`}
+              onClick={() => setChartType('line')}
+            >
+              <i className="fas fa-chart-line"></i> Line
+            </button>
+          </div>
+        </div>
+      </div>
       <p>Analyze your medical expenses to better understand your spending patterns.</p>
       
       {loading ? (
