@@ -324,7 +324,7 @@ function ExpenseAnalytics({ user }) {
             <div className="analytics-cards">
               <div className="analytics-card">
                 <div className="analytics-card-body">
-                  <div className="analytics-value">${outOfPocketAmount.toFixed(2)}</div>
+                  <div className="analytics-value">LKR {outOfPocketAmount.toFixed(2)}</div>
                   <div className="analytics-label">
                     {((outOfPocketAmount / totalExpenses) * 100).toFixed(1)}% of total
                   </div>
@@ -352,7 +352,7 @@ function ExpenseAnalytics({ user }) {
                         .map(([category, amount]) => (
                           <tr key={category}>
                             <td>{category}</td>
-                            <td>${amount.toFixed(2)}</td>
+                            <td>LKR {amount.toFixed(2)}</td>
                             <td>{((amount / totalExpenses) * 100).toFixed(1)}%</td>
                           </tr>
                         ))}
@@ -379,7 +379,7 @@ function ExpenseAnalytics({ user }) {
                           .map(({ month, amount }) => (
                             <tr key={month}>
                               <td>{monthNames[month]}</td>
-                              <td>${amount.toFixed(2)}</td>
+                              <td>LKR {amount.toFixed(2)}</td>
                               <td>{((amount / totalExpenses) * 100).toFixed(1)}%</td>
                             </tr>
                           ))}
