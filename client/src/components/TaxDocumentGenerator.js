@@ -7,6 +7,9 @@ function TaxDocumentGenerator({ user }) {
   const [taxYear, setTaxYear] = useState(new Date().getFullYear() - 1); // Default to previous year for tax purposes
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [documentType, setDocumentType] = useState('summary'); // summary, detailed, schedule-a
+  const [includeReceipts, setIncludeReceipts] = useState(false);
+  const [includeProviderInfo, setIncludeProviderInfo] = useState(true);
   
   // Generate list of available tax years (current year and 7 years back)
   const currentYear = new Date().getFullYear();
@@ -176,7 +179,87 @@ function TaxDocumentGenerator({ user }) {
   return (
     <div className="tax-document-generator">
       <h2>Tax Document Generator</h2>
-      <p>Generate a summary of your tax-deductible medical expenses for your tax return.</p>
+      <p>Generate tax documents for your medical expenses.</p>
+      
+      <div className="document-options">
+        <div className="option-group">
+          <label>Document Type:</label>
+          <div className="document-type-selector">
+            <div className="document-type-option">
+              <input 
+                type="radio" 
+                id="summary" 
+                name="documentType" 
+                value="summary" 
+                checked={documentType === 'summary'} 
+                onChange={() => setDocumentType('summary')}
+              />
+              <label htmlFor="summary">
+                <i className="fas fa-file-alt"></i>
+                <span>Summary Report</span>
+                <small>Basic overview of tax-deductible expenses</small>
+              </label>
+            </div>
+            
+            <div className="document-type-option">
+              <input 
+                type="radio" 
+                id="detailed" 
+                name="documentType" 
+                value="detailed" 
+                checked={documentType === 'detailed'} 
+                onChange={() => setDocumentType('detailed')}
+              />
+              <label htmlFor="detailed">
+                <i className="fas fa-file-invoice"></i>
+                <span>Detailed Report</span>
+                <small>Comprehensive breakdown with all expense details</small>
+              </label>
+            </div>
+            
+            <div className="document-type-option">
+              <input 
+                type="radio" 
+                id="schedule-a" 
+                name="documentType" 
+                value="schedule-a" 
+                checked={documentType === 'schedule-a'} 
+                onChange={() => setDocumentType('schedule-a')}
+              />
+              <label htmlFor="schedule-a">
+                <i className="fas fa-file-contract"></i>
+                <span>Schedule A Format</span>
+                <small>Formatted for direct tax filing compatibility</small>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <div className="option-group">
+          <label>Additional Options:</label>
+          <div className="checkbox-options">
+            <div className="checkbox-option">
+              <input 
+                type="checkbox" 
+                id="includeReceipts" 
+                checked={includeReceipts} 
+                onChange={() => setIncludeReceipts(!includeReceipts)}
+              />
+              <label htmlFor="includeReceipts">Include receipt thumbnails</label>
+            </div>
+            
+            <div className="checkbox-option">
+              <input 
+                type="checkbox" 
+                id="includeProviderInfo" 
+                checked={includeProviderInfo} 
+                onChange={() => setIncludeProviderInfo(!includeProviderInfo)}
+              />
+              <label htmlFor="includeProviderInfo">Include provider information</label>
+            </div>
+          </div>
+        </div>
+      </div>
       
       {message && <div className="alert alert-info">{message}</div>}
       
