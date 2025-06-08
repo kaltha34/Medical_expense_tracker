@@ -119,7 +119,7 @@ function Dashboard({ user }) {
           </div>
           <div className="card-content">
             <h3>Total Expenses</h3>
-            <div className="amount">${summaryData.totalExpenses.toFixed(2)}</div>
+            <div className="amount">LKR {summaryData.totalExpenses.toFixed(2)}</div>
             <p>All time</p>
           </div>
         </div>
@@ -130,7 +130,7 @@ function Dashboard({ user }) {
           </div>
           <div className="card-content">
             <h3>This Month</h3>
-            <div className="amount">${summaryData.thisMonth.toFixed(2)}</div>
+            <div className="amount">LKR {summaryData.thisMonth.toFixed(2)}</div>
             <p>{new Date().toLocaleString('default', { month: 'long' })}</p>
           </div>
         </div>
@@ -141,7 +141,7 @@ function Dashboard({ user }) {
           </div>
           <div className="card-content">
             <h3>Pending Claims</h3>
-            <div className="amount">${summaryData.pendingClaims.toFixed(2)}</div>
+            <div className="amount">LKR {summaryData.pendingClaims.toFixed(2)}</div>
             <p>Awaiting reimbursement</p>
           </div>
         </div>
@@ -152,7 +152,7 @@ function Dashboard({ user }) {
           </div>
           <div className="card-content">
             <h3>Tax Deductible</h3>
-            <div className="amount">${summaryData.taxDeductible.toFixed(2)}</div>
+            <div className="amount">LKR {summaryData.taxDeductible.toFixed(2)}</div>
             <p>Potential tax savings</p>
           </div>
         </div>
@@ -165,17 +165,17 @@ function Dashboard({ user }) {
             <div className="comparison-data">
               <div className="comparison-item">
                 <span className="label">This Month</span>
-                <span className="value">${summaryData.thisMonth.toFixed(2)}</span>
+                <span className="value">LKR {summaryData.thisMonth.toFixed(2)}</span>
               </div>
               <div className="comparison-item">
                 <span className="label">Last Month</span>
-                <span className="value">${summaryData.lastMonth.toFixed(2)}</span>
+                <span className="value">LKR {summaryData.lastMonth.toFixed(2)}</span>
               </div>
               <div className="comparison-item">
                 <span className="label">Difference</span>
                 <span className="value difference ${summaryData.thisMonth > summaryData.lastMonth ? 'increase' : 'decrease'}">
                   {summaryData.thisMonth > summaryData.lastMonth ? '+' : ''}
-                  ${(summaryData.thisMonth - summaryData.lastMonth).toFixed(2)}
+                  LKR {(summaryData.thisMonth - summaryData.lastMonth).toFixed(2)}
                 </span>
               </div>
             </div>
@@ -212,7 +212,7 @@ function Dashboard({ user }) {
                     <tr key={expense.id}>
                       <td>{new Date(expense.date).toLocaleDateString()}</td>
                       <td>{expense.provider}</td>
-                      <td>${expense.amount.toFixed(2)}</td>
+                      <td>LKR {expense.amount.toFixed(2)}</td>
                       <td>
                         <span className={`status-badge status-${expense.status.toLowerCase().replace(' ', '-')}`}>
                           {expense.status}
