@@ -4,6 +4,9 @@ import 'jspdf-autotable';
 
 function ReportGenerator({ user }) {
   const [expenses, setExpenses] = useState([]);
+  const [reportFormat, setReportFormat] = useState('pdf'); // pdf, csv, excel
+  const [reportLayout, setReportLayout] = useState('detailed'); // detailed, summary, compact
+  const [includeCharts, setIncludeCharts] = useState(true);
   const [filters, setFilters] = useState({
     startDate: new Date(new Date().getFullYear(), 0, 1).toISOString().split('T')[0], // Jan 1 of current year
     endDate: new Date().toISOString().split('T')[0], // Today
