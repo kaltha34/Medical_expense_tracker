@@ -67,7 +67,7 @@ function InsuranceClaimTracker({ user }) {
         
         <div className="summary-card">
           <h3>Reimbursed Amount</h3>
-          <div className="amount">${stats.reimbursedAmount.toFixed(2)}</div>
+          <div className="amount">LKR {stats.reimbursedAmount.toFixed(2)}</div>
           <p>Total received</p>
         </div>
         
@@ -106,7 +106,7 @@ function InsuranceClaimTracker({ user }) {
                     <td>{claim.date}</td>
                     <td>{claim.provider}</td>
                     <td>{claim.description}</td>
-                    <td>${claim.amount.toFixed(2)}</td>
+                    <td>LKR {claim.amount.toFixed(2)}</td>
                     <td>
                       <span className={
                         claim.status === 'Reimbursed' ? 'status-success' :
